@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 import 'screens/welcome_screen.dart';
+import 'screens/responsive_home.dart';
 
 void main() {
-  runApp(const SafeRouteApp());
+  runApp(const VeloryApp());
 }
 
-class SafeRouteApp extends StatelessWidget {
-  const SafeRouteApp({super.key});
+class VeloryApp extends StatelessWidget {
+  const VeloryApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SafeRoute',
+      title: 'Velory',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const WelcomeScreen(),
+      home: const ResponsiveHome(),
     );
   }
 }
