@@ -23,7 +23,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return Scaffold(
       backgroundColor: _backgroundColor,
       appBar: AppBar(
-        title: const Text('SafeRoute'),
+        title: const Text('Velory'),
         centerTitle: true,
         backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
@@ -43,8 +43,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               const SizedBox(height: 32),
               Text(
                 _isWelcomeMode 
-                    ? 'Welcome to SafeRoute!' 
-                    : 'Let\'s Navigate Safely!',
+                    ? 'Welcome to Velory!' 
+                    : 'Let\'s Navigate Smartly!',
                 style: const TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
@@ -55,8 +55,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               const SizedBox(height: 16),
               Text(
                 _isWelcomeMode
-                    ? 'Your smart companion for safer journeys'
-                    : 'Experience intelligent route planning',
+                    ? 'Your intelligent route planning companion'
+                    : 'Experience adaptive UI design',
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.grey.shade700,

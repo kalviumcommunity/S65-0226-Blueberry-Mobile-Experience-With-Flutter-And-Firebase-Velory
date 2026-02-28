@@ -8,23 +8,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:saferoute/main.dart';
+import 'package:velory/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Velory responsive home renders correctly', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const VeloryApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verify that the app bar contains 'Velory' title
+    expect(find.text('Velory'), findsWidgets);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    // Verify that the welcome message is displayed
+    expect(find.text('Welcome to Velory'), findsOneWidget);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify that feature cards are displayed
+    expect(find.text('Smart Routes'), findsOneWidget);
+    expect(find.text('Safe Passages'), findsOneWidget);
+    expect(find.text('Analytics'), findsOneWidget);
+
+    // Verify that action buttons are present
+    expect(find.text('Start Journey'), findsOneWidget);
+    expect(find.text('Learn More'), findsOneWidget);
   });
 }
