@@ -7,116 +7,111 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       scaffoldBackgroundColor: AppColors.white,
-      
+
       // Color Scheme
-      colorScheme: ColorScheme.light(
+      colorScheme: const ColorScheme.light(
         primary: AppColors.primaryBlue,
-        secondary: AppColors.warmOrange,
+        secondary: AppColors.softYellow,
         tertiary: AppColors.actionRed,
         surface: AppColors.white,
-        surfaceContainer: AppColors.veryLightGrey,
+        surfaceContainer: AppColors.softYellow,
         error: AppColors.actionRed,
         onPrimary: AppColors.white,
-        onSecondary: AppColors.white,
+        onSecondary: AppColors.primaryBlue,
         onTertiary: AppColors.white,
-        onSurface: AppColors.darkGrey,
+        onSurface: AppColors.primaryBlue,
         onError: AppColors.white,
       ),
 
-      // Text Theme with Google Fonts (Poppins)
+      // Text Theme with Google Fonts (Nunito)
       textTheme: TextTheme(
-        // Headlines
-        headlineLarge: GoogleFonts.poppins(
+        headlineLarge: GoogleFonts.nunito(
           fontSize: 32,
           fontWeight: FontWeight.w700,
-          color: AppColors.darkGrey,
+          color: AppColors.primaryBlue,
         ),
-        headlineMedium: GoogleFonts.poppins(
+        headlineMedium: GoogleFonts.nunito(
           fontSize: 28,
           fontWeight: FontWeight.w700,
-          color: AppColors.darkGrey,
+          color: AppColors.primaryBlue,
         ),
-        headlineSmall: GoogleFonts.poppins(
+        headlineSmall: GoogleFonts.nunito(
           fontSize: 24,
           fontWeight: FontWeight.w700,
-          color: AppColors.darkGrey,
+          color: AppColors.primaryBlue,
         ),
-        
-        // Titles
-        titleLarge: GoogleFonts.poppins(
+
+        titleLarge: GoogleFonts.nunito(
           fontSize: 20,
           fontWeight: FontWeight.w600,
-          color: AppColors.darkGrey,
+          color: AppColors.primaryBlue,
         ),
-        titleMedium: GoogleFonts.poppins(
+        titleMedium: GoogleFonts.nunito(
           fontSize: 16,
           fontWeight: FontWeight.w600,
-          color: AppColors.darkGrey,
+          color: AppColors.primaryBlue,
         ),
-        titleSmall: GoogleFonts.poppins(
+        titleSmall: GoogleFonts.nunito(
           fontSize: 14,
           fontWeight: FontWeight.w600,
-          color: AppColors.darkGrey,
+          color: AppColors.primaryBlue,
         ),
 
-        // Body Text
-        bodyLarge: GoogleFonts.poppins(
+        bodyLarge: GoogleFonts.nunito(
           fontSize: 16,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w600,
           color: AppColors.mediumGrey,
         ),
-        bodyMedium: GoogleFonts.poppins(
+        bodyMedium: GoogleFonts.nunito(
           fontSize: 14,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w600,
           color: AppColors.mediumGrey,
         ),
-        bodySmall: GoogleFonts.poppins(
+        bodySmall: GoogleFonts.nunito(
           fontSize: 12,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w600,
           color: AppColors.mediumGrey,
         ),
 
-        // Labels
-        labelLarge: GoogleFonts.poppins(
+        labelLarge: GoogleFonts.nunito(
           fontSize: 14,
           fontWeight: FontWeight.w600,
-          color: AppColors.darkGrey,
+          color: AppColors.primaryBlue,
         ),
-        labelMedium: GoogleFonts.poppins(
+        labelMedium: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w600,
-          color: AppColors.darkGrey,
+          color: AppColors.primaryBlue,
         ),
-        labelSmall: GoogleFonts.poppins(
+        labelSmall: GoogleFonts.nunito(
           fontSize: 11,
           fontWeight: FontWeight.w600,
-          color: AppColors.darkGrey,
+          color: AppColors.primaryBlue,
         ),
       ),
 
-      // AppBar Theme
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.primaryBlue,
-        foregroundColor: AppColors.white,
+        backgroundColor: AppColors.white,
+        foregroundColor: AppColors.primaryBlue,
         elevation: 0,
-        centerTitle: true,
-        titleTextStyle: GoogleFonts.poppins(
+        centerTitle: false,
+        titleTextStyle: GoogleFonts.nunito(
           fontSize: 20,
-          fontWeight: FontWeight.w600,
-          color: AppColors.white,
+          fontWeight: FontWeight.w700,
+          color: AppColors.primaryBlue,
         ),
       ),
 
-      // Button Themes
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primaryBlue,
           foregroundColor: AppColors.white,
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          textStyle: GoogleFonts.poppins(
+          elevation: 0,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+          textStyle: GoogleFonts.nunito(
             fontSize: 16,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w700,
           ),
         ),
       ),
@@ -124,12 +119,12 @@ class AppTheme {
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           foregroundColor: AppColors.primaryBlue,
-          side: const BorderSide(color: AppColors.primaryBlue, width: 2),
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          textStyle: GoogleFonts.poppins(
+          side: const BorderSide(color: AppColors.primaryBlue, width: 1.2),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+          textStyle: GoogleFonts.nunito(
             fontSize: 16,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w700,
           ),
         ),
       ),
@@ -137,92 +132,81 @@ class AppTheme {
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           foregroundColor: AppColors.primaryBlue,
-          textStyle: GoogleFonts.poppins(
+          textStyle: GoogleFonts.nunito(
             fontSize: 14,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w700,
           ),
         ),
       ),
 
-      // Input Decoration Theme
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: AppColors.veryLightGrey,
+        fillColor: AppColors.softYellow.withValues(alpha: 0.35),
         contentPadding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(14),
           borderSide: BorderSide.none,
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(14),
+          borderSide: BorderSide(color: AppColors.softYellow),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppColors.primaryBlue, width: 2),
+          borderRadius: BorderRadius.circular(14),
+          borderSide: const BorderSide(color: AppColors.primaryBlue, width: 1.6),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppColors.actionRed, width: 2),
+          borderRadius: BorderRadius.circular(14),
+          borderSide: const BorderSide(color: AppColors.actionRed, width: 1.6),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppColors.actionRed, width: 2),
+          borderRadius: BorderRadius.circular(14),
+          borderSide: const BorderSide(color: AppColors.actionRed, width: 1.6),
         ),
-        labelStyle: GoogleFonts.poppins(
+        labelStyle: GoogleFonts.nunito(
           fontSize: 14,
-          fontWeight: FontWeight.w500,
-          color: AppColors.mediumGrey,
+          fontWeight: FontWeight.w700,
+          color: AppColors.primaryBlue,
         ),
-        hintStyle: GoogleFonts.poppins(
+        hintStyle: GoogleFonts.nunito(
           fontSize: 14,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w600,
           color: AppColors.lightGrey,
         ),
       ),
 
-      // Card Theme
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.white,
-        elevation: 2,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      ),
-
-      // Floating Action Button Theme
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: AppColors.primaryBlue,
-        foregroundColor: AppColors.white,
-        elevation: 4,
+        elevation: 0,
+        margin: EdgeInsets.zero,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
+          side: const BorderSide(color: AppColors.softYellow),
         ),
       ),
 
-      // Bottom Navigation Bar Theme
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: AppColors.actionRed,
+        foregroundColor: AppColors.white,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(14),
+        ),
+      ),
+
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: AppColors.white,
         selectedItemColor: AppColors.primaryBlue,
-        unselectedItemColor: AppColors.lightGrey,
-        elevation: 8,
+        unselectedItemColor: AppColors.actionRed,
+        elevation: 0,
         type: BottomNavigationBarType.fixed,
-        selectedLabelStyle: GoogleFonts.poppins(
+        selectedLabelStyle: GoogleFonts.nunito(
           fontSize: 12,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w800,
         ),
-        unselectedLabelStyle: GoogleFonts.poppins(
+        unselectedLabelStyle: GoogleFonts.nunito(
           fontSize: 12,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
-
-      // Drawer Theme
-      drawerTheme: DrawerThemeData(
-        backgroundColor: AppColors.white,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(16),
-            bottomRight: Radius.circular(16),
-          ),
+          fontWeight: FontWeight.w700,
         ),
       ),
     );

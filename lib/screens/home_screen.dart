@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
-import '../models/models.dart';
+import '../models/models.dart' as models;
 import '../widgets/custom_widgets.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,13 +11,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late List<Route> _routes;
+  late List<models.Route> _routes;
   String _searchQuery = '';
 
   @override
   void initState() {
     super.initState();
-    _routes = Route.getDummyRoutes();
+    _routes = models.Route.getDummyRoutes();
   }
 
   @override
@@ -27,26 +27,32 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Discover Routes'),
         elevation: 0,
-        backgroundColor: AppColors.primaryBlue,
+        backgroundColor: AppColors.white,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             // Map Section
             Container(
-              height: 300,
-              color: AppColors.veryLightGrey,
+              height: 292,
+              margin: const EdgeInsets.fromLTRB(16, 4, 16, 0),
+              decoration: BoxDecoration(
+                color: AppColors.softYellow.withValues(alpha: 0.28),
+                borderRadius: BorderRadius.circular(22),
+                border: Border.all(color: AppColors.softYellow),
+              ),
               child: Stack(
                 children: [
                   // Fake Map Background
                   Container(
                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(22),
                       gradient: LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                         colors: [
-                          AppColors.softYellow.withOpacity(0.3),
-                          AppColors.primaryBlue.withOpacity(0.1),
+                          AppColors.white,
+                          AppColors.softYellow.withValues(alpha: 0.55),
                         ],
                       ),
                     ),
@@ -89,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Positioned(
                     bottom: 80,
                     right: 40,
-                    child: _buildMapMarker('Downtown', AppColors.softYellow),
+                    child: _buildMapMarker('Downtown', AppColors.primaryBlue),
                   ),
                   // Search Bar Overlay
                   Positioned(
@@ -145,13 +151,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         _showRouteDetails(route);
                       },
                     );
-                  }).toList(),
+                  }),
                   const SizedBox(height: 16),
                   // Featured Tip
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: AppColors.softYellow.withOpacity(0.2),
+                      color: AppColors.softYellow.withValues(alpha: 0.25),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(color: AppColors.softYellow),
                     ),
@@ -218,7 +224,7 @@ class _HomeScreenState extends State<HomeScreen> {
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
-                color: color.withOpacity(0.4),
+                color: color.withValues(alpha: 0.28),
                 blurRadius: 8,
                 spreadRadius: 2,
               ),
@@ -236,7 +242,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
           decoration: BoxDecoration(
-            color: color.withOpacity(0.1),
+            color: color.withValues(alpha: 0.12),
             borderRadius: BorderRadius.circular(4),
             border: Border.all(color: color),
           ),
@@ -253,7 +259,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void _showRouteDetails(Route route) {
+  void _showRouteDetails(models.Route route) {
     showModalBottomSheet(
       context: context,
       builder: (context) => Container(

@@ -26,7 +26,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         title: const Text('Profile'),
         elevation: 0,
-        backgroundColor: AppColors.primaryBlue,
+        backgroundColor: AppColors.white,
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications_outlined),
@@ -44,15 +44,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
             // Profile Header
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.symmetric(vertical: 32),
+              padding: const EdgeInsets.symmetric(vertical: 28),
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    AppColors.primaryBlue,
-                    AppColors.primaryBlue.withOpacity(0.8),
-                  ],
+                color: AppColors.softYellow.withValues(alpha: 0.32),
+                border: const Border(
+                  bottom: BorderSide(color: AppColors.softYellow),
                 ),
               ),
               child: Column(
@@ -62,15 +58,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     width: 100,
                     height: 100,
                     decoration: BoxDecoration(
-                      color: AppColors.softYellow,
+                      color: AppColors.primaryBlue,
                       shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.2),
-                          blurRadius: 20,
-                          offset: const Offset(0, 10),
-                        ),
-                      ],
+                      border: Border.all(color: AppColors.white, width: 3),
                     ),
                     child: Center(
                       child: Text(
@@ -84,7 +74,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Text(
                     _user.name,
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      color: AppColors.white,
+                      color: AppColors.primaryBlue,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -93,7 +83,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Text(
                     _user.email,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: AppColors.softYellow,
+                      color: AppColors.mediumGrey,
                     ),
                   ),
                 ],

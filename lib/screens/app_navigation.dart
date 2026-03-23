@@ -78,14 +78,13 @@ class _AppNavigationState extends State<AppNavigation> {
       const ProfileScreen(),
     ];
 
-    return WillPopScope(
-      onWillPop: () async {
-        if (_selectedIndex != 0) {
+    return PopScope(
+      canPop: _selectedIndex == 0,
+      onPopInvokedWithResult: (didPop, result) {
+        if (!didPop && _selectedIndex != 0) {
           setState(() => _selectedIndex = 0);
           _pageController.jumpToPage(0);
-          return false;
         }
-        return true;
       },
       child: Scaffold(
         body: PageView(
@@ -96,28 +95,31 @@ class _AppNavigationState extends State<AppNavigation> {
           physics: const NeverScrollableScrollPhysics(),
           children: screens,
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _selectedIndex,
-          onTap: _onNavTap,
-          items: const [
-            BottomNavigationBarItem(
+        bottomNavigationBar: NavigationBar(
+          selectedIndex: _selectedIndex,
+          onDestinationSelected: _onNavTap,
+          indicatorColor: AppColors.softYellow.withValues(alpha: 0.55),
+          backgroundColor: AppColors.white,
+          height: 74,
+          destinations: const [
+            NavigationDestination(
               icon: Icon(Icons.home_outlined),
-              activeIcon: Icon(Icons.home),
+              selectedIcon: Icon(Icons.home),
               label: 'Home',
             ),
-            BottomNavigationBarItem(
+            NavigationDestination(
               icon: Icon(Icons.route_outlined),
-              activeIcon: Icon(Icons.route),
+              selectedIcon: Icon(Icons.route),
               label: 'Routes',
             ),
-            BottomNavigationBarItem(
+            NavigationDestination(
               icon: Icon(Icons.favorite_outline),
-              activeIcon: Icon(Icons.favorite),
+              selectedIcon: Icon(Icons.favorite),
               label: 'Favorites',
             ),
-            BottomNavigationBarItem(
+            NavigationDestination(
               icon: Icon(Icons.person_outline),
-              activeIcon: Icon(Icons.person),
+              selectedIcon: Icon(Icons.person),
               label: 'Profile',
             ),
           ],
@@ -139,7 +141,7 @@ class _AppNavigationState extends State<AppNavigation> {
             Icon(
               Icons.favorite,
               size: 80,
-              color: AppColors.actionRed.withOpacity(0.3),
+              color: AppColors.actionRed.withValues(alpha: 0.3),
             ),
             const SizedBox(height: 24),
             Text(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
-import '../models/models.dart';
 import '../widgets/custom_widgets.dart';
 
 class AddRouteScreen extends StatefulWidget {

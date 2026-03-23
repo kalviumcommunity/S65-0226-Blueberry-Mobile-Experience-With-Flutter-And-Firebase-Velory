@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
-import '../models/models.dart';
+import '../models/models.dart' as models;
 import '../widgets/custom_widgets.dart';
 
 class MyRoutesScreen extends StatefulWidget {
@@ -11,12 +11,12 @@ class MyRoutesScreen extends StatefulWidget {
 }
 
 class _MyRoutesScreenState extends State<MyRoutesScreen> {
-  late List<Route> _myRoutes;
+  late List<models.Route> _myRoutes;
 
   @override
   void initState() {
     super.initState();
-    _myRoutes = Route.getDummyRoutes();
+    _myRoutes = models.Route.getDummyRoutes();
   }
 
   void _deleteRoute(String routeId) {
@@ -208,7 +208,7 @@ class _MyRoutesScreenState extends State<MyRoutesScreen> {
               width: 200,
             ),
           ],
-        );
+        ),
       ),
     );
   }
@@ -230,7 +230,7 @@ class _MyRoutesScreenState extends State<MyRoutesScreen> {
     );
   }
 
-  void _showRouteDetails(Route route) {
+  void _showRouteDetails(models.Route route) {
     showModalBottomSheet(
       context: context,
       builder: (context) => Container(

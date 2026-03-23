@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
-import '../constants/app_theme.dart';
 
 // Custom Elevated Button with brand styling
 class VeloryButton extends StatelessWidget {
